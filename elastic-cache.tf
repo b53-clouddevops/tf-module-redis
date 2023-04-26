@@ -15,7 +15,7 @@ resource "aws_elasticache_parameter_group" "default" {
   family               = "redis6.2"
 }
 
-# Creates Subnet Group
+# Creates Subnet Group.
 resource "aws_elasticache_subnet_group" "redis_subnet_group" {
   name                 = "robot-${var.ENV}-redis-subet-group"
   subnet_ids           = data.terraform_remote_state.vpc.outputs.PRIVATE_SUBNET_IDS
